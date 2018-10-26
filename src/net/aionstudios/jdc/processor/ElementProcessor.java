@@ -6,6 +6,7 @@ import com.sun.net.httpserver.HttpExchange;
 
 import net.aionstudios.jdc.content.JDCElement;
 import net.aionstudios.jdc.content.JDCHeadElement;
+import net.aionstudios.jdc.content.RequestVariables;
 import net.aionstudios.jdc.cron.CronCompute;
 
 public abstract class ElementProcessor {
@@ -38,9 +39,9 @@ public abstract class ElementProcessor {
 		return computeSchedule;
 	}
 	
-	public String getContent(JDCHeadElement element, HttpExchange he, Map<String, String> post, Map<String, String> get) {
+	public String getContent(JDCHeadElement element, HttpExchange he, RequestVariables vars, Map<String, Object> pageVariables) {
 		if(computeSchedule.getTypeInt()==1) {
-			generateContent(element, he, post, get);
+			generateContent(element, he, vars, pageVariables);
 			return element.makeString();
 		}
 		return lastCompute;
@@ -52,7 +53,7 @@ public abstract class ElementProcessor {
 		lastCompute = e.makeString();
 	}
 	
-	public abstract void generateContent(JDCHeadElement element, HttpExchange he, Map<String, String> post, Map<String, String> get);
+	public abstract void generateContent(JDCHeadElement element, HttpExchange he, RequestVariables vars, Map<String, Object> pageVariables);
 	
 	public abstract void generateContent(JDCHeadElement element);
 

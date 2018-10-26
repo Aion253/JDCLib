@@ -4,6 +4,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
 
 /**
  * A class providing services relating to AOS's date-time systems.
@@ -13,7 +15,8 @@ import java.util.Date;
  */
 public class DateTimeServices {
 	
-	private static SimpleDateFormat dateform = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	private static SimpleDateFormat mysqlDateForm = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	private static SimpleDateFormat httpDateForm = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z", Locale.US);
 	private static Calendar c;
 	
 	/**
@@ -22,7 +25,17 @@ public class DateTimeServices {
 	 * @return	The MYSQL formatted date.
 	 */
 	public static String getMysqlCompatibleDateTime() {
-		return dateform.format(new Date());
+		return mysqlDateForm.format(new Date());
+	}
+	
+	public static String getServerTime() {
+	    httpDateForm.setTimeZone(TimeZone.getTimeZone("GMT"));
+	    return httpDateForm.format(new Date());
+	}
+	
+	public static String getHttpTime(Date d) {
+	    httpDateForm.setTimeZone(TimeZone.getTimeZone("GMT"));
+	    return httpDateForm.format(d);
 	}
 	
 	/**
@@ -32,7 +45,7 @@ public class DateTimeServices {
 	 */
 	public static String getThirtyAddedDT() {
 		long millis = Calendar.getInstance().getTimeInMillis();
-		return dateform.format(new Date(millis+1800000));
+		return mysqlDateForm.format(new Date(millis+1800000));
 	}
 	
 	/**
@@ -43,7 +56,7 @@ public class DateTimeServices {
 	 */
 	public static String getSecondsAddedDT(long seconds) {
 		long millis = Calendar.getInstance().getTimeInMillis();
-		return dateform.format(new Date(millis+(1000*seconds)));
+		return mysqlDateForm.format(new Date(millis+(1000*seconds)));
 	}
 	
 	/**
@@ -55,7 +68,7 @@ public class DateTimeServices {
 	public static Date getDateTimeFromString(String dateTime) {
 		Date d = new Date();
 		try {
-			d = dateform.parse(dateTime);
+			d = mysqlDateForm.parse(dateTime);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
