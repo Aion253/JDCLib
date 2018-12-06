@@ -7,14 +7,17 @@ import java.util.Map;
 
 public class CookieManager {
 	
-	private List<Cookie> newCookies = new ArrayList<Cookie>();
-	private Map<String, String> requestCookies = new HashMap<String, String>();
+	private List<Cookie> newCookies;
+	private Map<String, String> requestCookies;
 	
 	public CookieManager() {
-		
+		newCookies = new ArrayList<Cookie>();
+		requestCookies = new HashMap<String, String>();
 	}
 	
 	public CookieManager(Map<String, String> cookies) {
+		newCookies = new ArrayList<Cookie>();
+		requestCookies = new HashMap<String, String>();
 		if(cookies!=null&&!cookies.isEmpty()) {
 			this.requestCookies = cookies;
 		}

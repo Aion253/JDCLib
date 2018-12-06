@@ -1,5 +1,6 @@
 package net.aionstudios.jdc.content;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class RequestVariables {
@@ -8,12 +9,14 @@ public class RequestVariables {
 	private Map<String, String> get;
 	private Map<String, String> cookies;
 	private CookieManager cookieManager;
+	private String page;
 	
-	public RequestVariables(Map<String, String> post, Map<String, String> get, Map<String, String> cookies) {
-		this.post = post;
-		this.get = get;
-		this.cookies = cookies;
+	public RequestVariables(Map<String, String> post, Map<String, String> get, Map<String, String> cookies, String page) {
+		this.post = post!=null ? post : new HashMap<String, String>();
+		this.get = get!=null ? get : new HashMap<String, String>();
+		this.cookies = cookies!=null ? cookies : new HashMap<String, String>();
 		this.cookieManager = new CookieManager(cookies);
+		this.page = page;
 	}
 
 	public Map<String, String> getPost() {
@@ -30,6 +33,10 @@ public class RequestVariables {
 
 	public CookieManager getCookieManager() {
 		return cookieManager;
+	}
+	
+	public String getPage() {
+		return page;
 	}
 
 }
