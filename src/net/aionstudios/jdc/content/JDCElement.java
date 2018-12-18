@@ -41,7 +41,11 @@ public class JDCElement {
 		StringBuilder make = new StringBuilder();
 		make.append("<"+type+" ");
 		for(int i = 0; i < attributes.size(); i++) {
-			make.append(attributes.keySet().toArray()[i] + "=\"" + attributes.get(attributes.keySet().toArray()[i]) + "\" ");
+			if(attributes.get(attributes.keySet().toArray()[i]) != null) {
+				make.append(attributes.keySet().toArray()[i] + "=\"" + attributes.get(attributes.keySet().toArray()[i]) + "\" ");
+			} else {
+				make.append(attributes.keySet().toArray()[i]+" ");
+			}
 		}
 		make.append(">"+text);
 		for(JDCElement e:children) {

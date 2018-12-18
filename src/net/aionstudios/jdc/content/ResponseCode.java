@@ -9,6 +9,7 @@ package net.aionstudios.jdc.content;
 public enum ResponseCode {
 	
 	OK(200),
+	REDIRECT(302),
 	NO_CONTENT(204),
 	NOT_FOUND(404),
 	INTERNAL_SERVER_ERROR(500);
@@ -41,6 +42,8 @@ public enum ResponseCode {
 	public String getCodeName() {
 		if(value==200) {
 			return "OK";
+		} else if(value==302) {
+			return "Redirect";
 		} else if(value==404) {
 			return "Not Found";
 		} else if(value==500) {
@@ -57,6 +60,8 @@ public enum ResponseCode {
 	public String getCodeDesc(String pageName) {
 		if(value==200) {
 			return "The request was completed without serious error and returned valid data.";
+		} else if(value==302) {
+			return "The requested resource, '"+pageName+"', was not found on this server.";
 		} else if(value==404) {
 			return "The requested resource, '"+pageName+"', was not found on this server.";
 		} else if(value==500) {
