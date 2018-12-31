@@ -38,16 +38,10 @@ public class OutgoingRequestService {
 		    DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
 		    wr.writeBytes(urlParameters);
 		    wr.close();
-
-		    System.out.println(connection.getHeaderField("Content-Type"));
 		    
 		    Map<String, List<String>> h = connection.getHeaderFields();
 		    
 		    or.setHeaders(h);
-		    
-		    for(int i = 0; i < h.size(); i++) {
-		    	System.out.println(h.keySet().toArray()[i] + " = "+h.get(h.keySet().toArray()[i]).get(0));
-		    }
 		    
 		    //Get Response  
 		    InputStream is = connection.getInputStream();

@@ -12,6 +12,7 @@ public class RequestVariables {
 	private String page;
 	private String redirect = null;
 	private String type = "text/html; charset=UTF-8";
+	private ResponseCode responseCode = ResponseCode.OK;
 	
 	public RequestVariables(Map<String, String> post, Map<String, String> get, Map<String, String> cookies, String page) {
 		this.post = post!=null ? post : new HashMap<String, String>();
@@ -59,6 +60,14 @@ public class RequestVariables {
 	
 	public String getContentType() {
 		return type;
+	}
+
+	public ResponseCode getResponseCode() {
+		return responseCode;
+	}
+
+	public void setResponseCode(ResponseCode responseCode) {
+		this.responseCode = responseCode;
 	}
 
 }

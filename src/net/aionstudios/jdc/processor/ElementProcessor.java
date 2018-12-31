@@ -48,7 +48,7 @@ public abstract class ElementProcessor {
 	}
 	
 	public void updateCompute() {
-		JDCHeadElement e = new JDCHeadElement();
+		JDCHeadElement e = new JDCHeadElement(null);
 		generateContent(e);
 		lastCompute = e.makeString();
 	}

@@ -8,11 +8,12 @@ import java.util.Map;
 public class JDCHeadElement {
 	
 	private String text = "";
+	private String predefinedElements = "";
 	private Map<String, String> attributes = new HashMap<String, String>();
 	private List<JDCElement> children = new ArrayList<JDCElement>();
 	
-	public JDCHeadElement() {
-		
+	public JDCHeadElement(String predefined) {
+		predefinedElements = predefined != null && predefined.length()>1 ? predefined : "";
 	}
 	
 	public JDCHeadElement addChild(JDCElement childElement) {
@@ -33,6 +34,7 @@ public class JDCHeadElement {
 	
 	public String makeString() {
 		StringBuilder make = new StringBuilder();
+		make.append(predefinedElements);
 		make.append(text);
 		for(JDCElement e:children) {
 			make.append(e.makeString());
