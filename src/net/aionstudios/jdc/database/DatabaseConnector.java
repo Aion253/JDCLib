@@ -61,6 +61,12 @@ public class DatabaseConnector {
 		return false;
 	}
 	
+	public static void refreshConnection() throws SQLException {
+		db.close();
+		db = DriverManager.getConnection(host, user, password);
+		getDatabase().setCatalog(database);
+	}
+	
 	/**
 	 * Connects and logs into a MySQL database using the default port.
 	 * 

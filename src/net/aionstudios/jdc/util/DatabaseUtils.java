@@ -35,6 +35,9 @@ public class DatabaseUtils {
 		List<QueryResults> resultSet = null;
 		try {
 			connection = DatabaseConnector.getDatabase();
+			if(!connection.isValid(1)) {
+				DatabaseConnector.refreshConnection();
+			}
 			statement = connection.prepareStatement(preparedStatement);
 			for(int i = 0; i < elements.length; i++) {
 				statement.setObject(i+1, elements[i]);
