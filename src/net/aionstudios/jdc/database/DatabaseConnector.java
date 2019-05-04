@@ -33,13 +33,14 @@ public class DatabaseConnector {
 	 * @param databasePassword The password of the database user provided in the databaseUser argument.
 	 * @return True if the database is functioning and accepted the connection, false otherwise.
 	 */
-	public static boolean setupDatabase(String hostname, String databaseName, String databasePort, String databaseUser, String databasePassword) {
+	public static boolean setupDatabase(String hostname, String databaseName, String databasePort, String databaseUser, String databasePassword, boolean autoReconnect, String timezone) {
 		if(host=="") {
-			host = "jdbc:mysql://"+hostname+":"+databasePort;
+			host = "jdbc:mysql://"+hostname+":"+databasePort+"/?autoReconnect="+Boolean.toString(autoReconnect)+"&serverTimezone="+timezone;
 			database = databaseName;
 			user = databaseUser;
 			password = databasePassword;
 			try {
+				//?autoReconnect=true&useSSL=false&serverTimezone=PDT
 				loadJDBC();
 				db = DriverManager.getConnection(host, user, password);
 			} catch (SQLException e1) {
@@ -76,9 +77,9 @@ public class DatabaseConnector {
 	 * @param databasePassword The password of the database user provided in the databaseUser argument.
 	 * @return True if the database is functioning and accepted the connection, false otherwise.
 	 */
-	public static boolean setupDatabase(String hostname, String databaseName, String databaseUser, String databasePassword) {
+	public static boolean setupDatabase(String hostname, String databaseName, String databaseUser, String databasePassword, boolean autoReconnect, String timezone) {
 		if(host=="") {
-			host = "jdbc:mysql://"+hostname;
+			host = "jdbc:mysql://"+hostname+"/?autoReconnect="+Boolean.toString(autoReconnect)+"&serverTimezone="+timezone;
 			database = databaseName;
 			user = databaseUser;
 			password = databasePassword;
