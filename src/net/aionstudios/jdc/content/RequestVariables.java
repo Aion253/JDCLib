@@ -1,5 +1,6 @@
 package net.aionstudios.jdc.content;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,6 +12,7 @@ public class RequestVariables {
 	private CookieManager cookieManager;
 	private String page;
 	private String redirect = null;
+	private File streamFile = null;
 	private String type = "text/html; charset=UTF-8";
 	private ResponseCode responseCode = ResponseCode.OK;
 	
@@ -60,6 +62,14 @@ public class RequestVariables {
 	
 	public String getContentType() {
 		return type;
+	}
+	
+	public void setStreamFile(File f) {
+		streamFile = f;
+	}
+	
+	public File getStreamFile() {
+		return streamFile;
 	}
 
 	public ResponseCode getResponseCode() {
