@@ -7,9 +7,7 @@ import java.security.SecureRandom;
 
 /**
  * A class providing utilities for security.
- * 
  * @author Winter Roberts
- *
  */
 public class SecurityUtils {
 	
@@ -18,7 +16,6 @@ public class SecurityUtils {
 
 	/**
 	 * Generates a token of the given length.
-	 * 
 	 * @param length The length of token to generate.
 	 * @return A token.
 	 */
@@ -29,6 +26,12 @@ public class SecurityUtils {
 	   return sb.toString();
 	}
 	
+	/**
+	 * Uses SHA-512 to hash a string with a salt.
+	 * @param passwordToHash The password which should be hashed.
+	 * @param salt The salt which should be used to hash.
+	 * @return The result of this hash.
+	 */
 	public static String sha512PasswordHash(String passwordToHash, String salt){
 		String generatedPassword = null;
 		try {
@@ -46,6 +49,11 @@ public class SecurityUtils {
 		return generatedPassword;
 	}
 	
+	/**
+	 * Uses SHA-512 to hash a string.
+	 * @param s The password which should be hashed.
+	 * @return The result of this hash.
+	 */
 	public static String sha512Hash(String s){
 		String generatedPassword = null;
 		try {

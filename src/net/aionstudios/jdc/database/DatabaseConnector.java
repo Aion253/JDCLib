@@ -8,9 +8,7 @@ import net.aionstudios.jdc.util.DatabaseUtils;
 
 /**
  * A class for assisting in connecting to and executing queries on MySQL databases using JDBC.
- * 
  * @author Winter Roberts
- *
  */
 public class DatabaseConnector {
 	
@@ -25,7 +23,6 @@ public class DatabaseConnector {
 	
 	/**
 	 * Connects and logs into a MySQL database.
-	 * 
 	 * @param hostname The hostname of the database server.
 	 * @param databaseName The name of database to be logged in to.
 	 * @param databasePort The port on which the database accepts connections.
@@ -70,7 +67,6 @@ public class DatabaseConnector {
 	
 	/**
 	 * Connects and logs into a MySQL database using the default port.
-	 * 
 	 * @param hostname The hostname of the database server.
 	 * @param databaseName The name of database to be logged in to.
 	 * @param databaseUser The username of a database user with access to the provided database.
@@ -104,7 +100,11 @@ public class DatabaseConnector {
 	}
 	
 	/**
-	 * Loads the database drive for JDBC if it hasn't been already
+	 * Loads the database drive for JDBC if it hasn't been already.
+	 * <p>
+	 * This will cause newer version of Java to print a warning about how the
+	 * driver is automatically added, which will result in this older version
+	 * of the the driver not loading.
 	 */
 	public static void loadJDBC() {
 		if(loadedJDBC==false) {
@@ -119,8 +119,8 @@ public class DatabaseConnector {
 	}
 	
 	/**
-	 * Gets an instance of the database to query through
-	 * @return	A database connection
+	 * Gets an instance of the database to query through.
+	 * @return	A database connection.
 	 */
 	public static Connection getDatabase() {
 		return db;

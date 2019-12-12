@@ -14,8 +14,19 @@ import javax.net.ssl.HttpsURLConnection;
 
 import net.aionstudios.jdc.content.OutgoingRequest;
 
+/**
+ * A content processor service for making outgoing requests.
+ * @author Winter Roberts
+ */
 public class OutgoingRequestService {
 	
+	/**
+	 * Makes a post request to the target URL with the given parameters.
+	 * @param targetURL The URL to which a request should be made.
+	 * @param urlParameters The URL parameters that should be included in this request.
+	 * @param or An {@link OutgoingRequest}.
+	 * @return The response from this request.
+	 */
 	public static String executePost(String targetURL, String urlParameters, OutgoingRequest or) {
 		  HttpURLConnection connection = null;
 
@@ -65,6 +76,11 @@ public class OutgoingRequestService {
 		  }
 		}
 	
+	/**
+	 * Makes a get request to the target URL with the given parameters.
+	 * @param targetURL The URL to which a request should be made.
+	 * @return The response from this request.
+	 */
 	public static String executeGet(String targetURL) {
 		  HttpURLConnection connection = null;
 		  
@@ -108,6 +124,11 @@ public class OutgoingRequestService {
 		  }
 		}
 	
+	/**
+	 * Converts a map of string, string pairs to a string to be added to the request header.
+	 * @param postQuery The map which should be converted.
+	 * @return The string conversion.
+	 */
 	public static String postMapToString(Map<String, String> postQuery) {
 		String postString = "";
 		for(int i = 0; i < postQuery.size(); i++) {

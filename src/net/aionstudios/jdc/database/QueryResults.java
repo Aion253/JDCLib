@@ -6,9 +6,7 @@ import java.util.Map;
 
 /**
  * A class that collects all results from a MySQL query, specifically designed in conjunction with {@link DatabaseUtils#prepareAndExecute}.
- * 
  * @author Winter Roberts
- *
  */
 public class QueryResults {
 	
@@ -17,7 +15,6 @@ public class QueryResults {
 	
 	/**
 	 * Creates a new {@link QueryResults} set.
-	 * 
 	 * @param resultset A list of mappings of strings by name to objects provided by each row in the result set of a MySQL query.
 	 * @param tableName The name of the table which the results came from.
 	 */
@@ -73,7 +70,6 @@ public class QueryResults {
 	
 	/**
 	 * Provides the name of the object type in a column of the results returned by a MySQL query.
-	 * 
 	 * @param columnNumber The column from which to reveal an object type.
 	 * @return A string representing an object type.
 	 */
@@ -86,7 +82,6 @@ public class QueryResults {
 	
 	/**
 	 * Provides the name of the object type in a column of the results returned by a MySQL query.
-	 * 
 	 * @param columnName The column from which to reveal an object type.
 	 * @return A string representing an object type.
 	 */

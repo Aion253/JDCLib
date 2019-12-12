@@ -4,9 +4,7 @@ import net.aionstudios.jdc.service.DateTimeServices;
 
 /**
  * A class that helps to define timing for {@link CronJob}s.
- * 
  * @author Winter Roberts
- *
  */
 public class CronDateTime {
 	
@@ -20,7 +18,6 @@ public class CronDateTime {
 	
 	/**
 	 * Constructs a complete crontTime from the information provided.
-	 * 
 	 * @param minute A minute or minute range provided in the form of a string (ints).
 	 * @param hour An hour or hour range provided in the form of a string (ints).
 	 * @param day A day or day range provided in the form of a string (ints).
@@ -42,7 +39,6 @@ public class CronDateTime {
 	/**
 	 * Sets the exact or range of minutes for which this {@link CronDateTime} will permit a {@link CronJob} to execute.
 	 * A note: start must always be less than or equal to end.
-	 * 
 	 * @param start	An integer representing the start of valid minutes (0-59)
 	 * @param end An integer representing the end of valid minutes (0-59)
 	 * @return True if all inputs were valid and the changes were applied, false otherwise.
@@ -63,7 +59,6 @@ public class CronDateTime {
 	/**
 	 * Sets the exact or range of hours for which this {@link CronDateTime} will permit a {@link CronJob} to execute.
 	 * A note: start must always be less than or equal to end.
-	 * 
 	 * @param start	An integer representing the start of valid hours (0-23)
 	 * @param end An integer representing the end of valid hours (0-23)
 	 * @return True if all inputs were valid and the changes were applied, false otherwise.
@@ -84,7 +79,6 @@ public class CronDateTime {
 	/**
 	 * Sets the exact or range of days of the month for which this {@link CronDateTime} will permit a {@link CronJob} to execute.
 	 * A note: start must always be less than or equal to end.
-	 * 
 	 * @param start	An integer representing the start of valid days (0-31)
 	 * @param end An integer representing the end of valid days (0-31)
 	 * @return True if all inputs were valid and the changes were applied, false otherwise.
@@ -105,7 +99,6 @@ public class CronDateTime {
 	/**
 	 * Sets the exact or range of months for which this {@link CronDateTime} will permit a {@link CronJob} to execute.
 	 * A note: start must always be less than or equal to end.
-	 * 
 	 * @param start	An integer representing the start of valid months (1-12)
 	 * @param end An integer representing the end of valid months (1-12)
 	 * @return True if all inputs were valid and the changes were applied, false otherwise.
@@ -126,7 +119,6 @@ public class CronDateTime {
 	/**
 	 * Sets the exact or range of days of the week for which this {@link CronDateTime} will permit a {@link CronJob} to execute.
 	 * A note: start must always be less than or equal to end.
-	 * 
 	 * @param start	An integer representing the start of valid days (1-7)
 	 * @param end An integer representing the end of valid days (1-7)
 	 * @return True if all inputs were valid and the changes were applied, false otherwise.
@@ -147,7 +139,6 @@ public class CronDateTime {
 	/**
 	 * Sets the exact or range of years for which this {@link CronDateTime} will permit a {@link CronJob} to execute.
 	 * A note: start must always be less than or equal to end.
-	 * 
 	 * @param start	An integer representing the start of valid years (1900-2999)
 	 * @param end An integer representing the end of valid hours (1900-2999)
 	 * @return True if all inputs were valid and the changes were applied, false otherwise.
@@ -216,7 +207,6 @@ public class CronDateTime {
 	/**
 	 * Appends an exact or range of minutes for which this {@link CronDateTime} will permit a {@link CronJob} to execute.
 	 * A note: start must always be less than or equal to end.
-	 * 
 	 * @param start	An integer representing the start of valid minutes (0-59)
 	 * @param end An integer representing the end of valid minutes (0-59)
 	 * @return True if all inputs were valid and the changes were applied, false otherwise.
@@ -240,7 +230,6 @@ public class CronDateTime {
 	/**
 	 * Appends an exact or range of hours for which this {@link CronDateTime} will permit a {@link CronJob} to execute.
 	 * A note: start must always be less than or equal to end.
-	 * 
 	 * @param start	An integer representing the start of valid hours (0-23)
 	 * @param end An integer representing the end of valid hours (0-23)
 	 * @return True if all inputs were valid and the changes were applied, false otherwise.
@@ -264,7 +253,6 @@ public class CronDateTime {
 	/**
 	 * Appends an exact or range of days of the month for which this {@link CronDateTime} will permit a {@link CronJob} to execute.
 	 * A note: start must always be less than or equal to end.
-	 * 
 	 * @param start	An integer representing the start of valid days (0-31)
 	 * @param end An integer representing the end of valid days (0-31)
 	 * @return True if all inputs were valid and the changes were applied, false otherwise.
@@ -288,7 +276,6 @@ public class CronDateTime {
 	/**
 	 * Appends an exact or range of months for which this {@link CronDateTime} will permit a {@link CronJob} to execute.
 	 * A note: start must always be less than or equal to end.
-	 * 
 	 * @param start	An integer representing the start of valid months (1-12)
 	 * @param end An integer representing the end of valid months (1-12)
 	 * @return True if all inputs were valid and the changes were applied, false otherwise.
@@ -312,7 +299,6 @@ public class CronDateTime {
 	/**
 	 * Appends an exact or range of days of the week for which this {@link CronDateTime} will permit a {@link CronJob} to execute.
 	 * A note: start must always be less than or equal to end.
-	 * 
 	 * @param start	An integer representing the start of valid days (1-7)
 	 * @param end An integer representing the end of valid days (1-7)
 	 * @return True if all inputs were valid and the changes were applied, false otherwise.
@@ -336,7 +322,6 @@ public class CronDateTime {
 	/**
 	 * Appends an exact or range of years for which this {@link CronDateTime} will permit a {@link CronJob} to execute.
 	 * A note: start must always be less than or equal to end.
-	 * 
 	 * @param start	An integer representing the start of valid years (1900-2999)
 	 * @param end An integer representing the end of valid hours (1900-2999)
 	 * @return True if all inputs were valid and the changes were applied, false otherwise.
@@ -359,7 +344,6 @@ public class CronDateTime {
 	
 	/**
 	 * Detects whether or not the {@link CronDateTime} supports an integer for a given minute.
-	 * 
 	 * @param match An integer to match against.
 	 * @return True if the {@link CronDateTime} supports the provided integer.
 	 */
@@ -385,7 +369,6 @@ public class CronDateTime {
 	
 	/**
 	 * Detects whether or not the {@link CronDateTime} supports an integer for a given hour.
-	 * 
 	 * @param match An integer to match against.
 	 * @return True if the {@link CronDateTime} supports the provided integer.
 	 */
@@ -411,7 +394,6 @@ public class CronDateTime {
 	
 	/**
 	 * Detects whether or not the {@link CronDateTime} supports an integer for a given day of the month.
-	 * 
 	 * @param match An integer to match against.
 	 * @return True if the {@link CronDateTime} supports the provided integer.
 	 */
@@ -437,7 +419,6 @@ public class CronDateTime {
 	
 	/**
 	 * Detects whether or not the {@link CronDateTime} supports an integer for a given month.
-	 * 
 	 * @param match An integer to match against.
 	 * @return True if the {@link CronDateTime} supports the provided integer.
 	 */
@@ -463,7 +444,6 @@ public class CronDateTime {
 	
 	/**
 	 * Detects whether or not the {@link CronDateTime} supports an integer for a given day of the week.
-	 * 
 	 * @param match An integer to match against.
 	 * @return True if the {@link CronDateTime} supports the provided integer.
 	 */
@@ -489,7 +469,6 @@ public class CronDateTime {
 	
 	/**
 	 * Detects whether or not the {@link CronDateTime} supports an integer for a given year.
-	 * 
 	 * @param match An integer to match against.
 	 * @return True if the {@link CronDateTime} supports the provided integer.
 	 */
@@ -515,7 +494,6 @@ public class CronDateTime {
 	
 	/**
 	 * Checks this {@link CronDateTime} against the current time.
-	 * 
 	 * @return True if the present system time matches with the sets in this {@link CronDateTime}, false otherwise.
 	 */
 	public boolean matchesNow() {
@@ -524,7 +502,6 @@ public class CronDateTime {
 	
 	/**
 	 * Checks this {@link CronDateTime} against a provided time.
-	 * 
 	 * @param min The minute to check against.
 	 * @param hour The hour to check against.
 	 * @param dom The day of the month to check against.

@@ -9,9 +9,7 @@ import net.aionstudios.jdc.service.DateTimeServices;
 
 /**
  * A class that accumulates {@link CronJob}s on the {@link APIServer} so that they can be executed by the cron thread on a schedule as defined by their associated {@link CronDateTime}s.
- * 
  * @author Winter Roberts
- *
  */
 public class CronManager {
 	
@@ -39,7 +37,7 @@ public class CronManager {
 			    			month = DateTimeServices.getCronMonth();
 			    			dow = DateTimeServices.getCronDayOfWeek();
 			    			year = DateTimeServices.getCronYear();
-			    			for(CronJob j : jobs) {
+			    			for(final CronJob j : jobs) {
 			    				if(j.cronMatches(min, hour, dom, month, dow, year)) {
 			    					jobExecutor.submit(new Runnable() {
 										@Override public void run() {j.start();}
@@ -61,6 +59,10 @@ public class CronManager {
 		}
 	}
 	
+	/**
+	 * Adds a {@link CronJob} to the cron manager.
+	 * @param j The {@link CronJob} to be added.
+	 */
 	public static void addJob(CronJob j) {
 		jobs.add(j);
 	}

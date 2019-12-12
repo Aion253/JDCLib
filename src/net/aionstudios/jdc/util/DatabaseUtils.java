@@ -15,15 +15,12 @@ import net.aionstudios.jdc.database.QueryResults;
 
 /**
  * A class providing utilities for working with databases.
- * 
  * @author Winter Roberts
- *
  */
 public class DatabaseUtils {
 	
 	/**
 	 * Uses a prepared statement for security and inserts provided elements for a query.
-	 * 
 	 * @param preparedStatement A prepared MySQL statement.
 	 * @param logError Whether or not to log MySQL errors for this query.
 	 * @param elements An array of objects to be added to the query.
@@ -81,7 +78,6 @@ public class DatabaseUtils {
 	
 	/**
 	 * Uses a prepared statement for security without additional elements.
-	 * 
 	 * @param preparedStatement A prepared MySQL statement.
 	 * @param logError Whether or not to log MySQL errors for this query.
 	 * @return A List of {@link QueryResults}.

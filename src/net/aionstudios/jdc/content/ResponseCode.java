@@ -3,9 +3,7 @@ package net.aionstudios.jdc.content;
 /**
  * Enumerates possible response statuses.
  * Not all responses are included as some should only be passed by the server itself and are not relevant.
- * 
  * @author Winter Roberts
- *
  */
 public enum ResponseCode {
 	
@@ -63,7 +61,6 @@ public enum ResponseCode {
 
 	/**
 	 * Creates a {@link ResponseStatus} by value.
-	 * 
 	 * @param newValue An integer representing the value of an enum in this class.
 	 */
 	ResponseCode(final int newValue) {

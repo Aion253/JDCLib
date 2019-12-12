@@ -9,9 +9,7 @@ import java.util.TimeZone;
 
 /**
  * A class providing services relating to AOS's date-time systems.
- * 
  * @author Winter Roberts
- *
  */
 public class DateTimeServices {
 	
@@ -21,8 +19,7 @@ public class DateTimeServices {
 	
 	/**
 	 * Generates a DateTime that matches the current time, compatible with MYSQL databases.
-	 * 
-	 * @return	The MYSQL formatted date.
+	 * @return The MYSQL formatted date.
 	 */
 	public static String getMysqlCompatibleDateTime() {
 		return mysqlDateForm.format(new Date());
@@ -40,8 +37,7 @@ public class DateTimeServices {
 	
 	/**
 	 * Gets the current datetime plus thirty minutes.
-	 * 
-	 * @return	The current time plus thirty minutes.
+	 * @return The current time plus thirty minutes.
 	 */
 	public static String getThirtyAddedDT() {
 		long millis = Calendar.getInstance().getTimeInMillis();
@@ -50,7 +46,6 @@ public class DateTimeServices {
 	
 	/**
 	 * Returns the time from now a provided number of seconds later.
-	 * 
 	 * @param seconds A number of seconds to add to the current time.
 	 * @return The string result of these additional seconds.
 	 */
@@ -61,9 +56,8 @@ public class DateTimeServices {
 	
 	/**
 	 * Reads a MYSQL formatted datetime to a Java date.
-	 * 
 	 * @param dateTime	A String representing the date and time in the form of yyyy-MM-dd HH:mm:ss..
-	 * @return	The given datetime string as a date object.
+	 * @return The given datetime string as a date object.
 	 */
 	public static Date getDateTimeFromString(String dateTime) {
 		Date d = new Date();

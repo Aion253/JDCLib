@@ -2,9 +2,7 @@ package net.aionstudios.jdc.cron;
 
 /**
  * A class containing a method to be run at times specified by a {@link CronDateTime}.
- * 
  * @author Winter Roberts
- *
  */
 public abstract class CronJob {
 	
@@ -13,7 +11,6 @@ public abstract class CronJob {
 	
 	/**
 	 * Creates a new {@link CronJob}.
-	 * 
 	 * @param cdt The {@link CronDateTime} to define scheduling for the execution of this {@link CronJob}.
 	 */
 	public CronJob(CronDateTime cdt) {
@@ -21,8 +18,7 @@ public abstract class CronJob {
 	}
 	
 	/**
-	 * Sets the {@link CronDateTime} of this {@link CronJob}
-	 * 
+	 * Sets the {@link CronDateTime} of this {@link CronJob}.
 	 * @param cdt The {@link CronDateTime} to define scheduling for the execution of this {@link CronJob}.
 	 */
 	public void setCronDateTime(CronDateTime cdt) {
