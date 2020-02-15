@@ -29,5 +29,10 @@ public abstract class JDC {
 	public ProcessorManager getProcessorManager() {
 		return pm;
 	}
+	
+	//Override me!
+	public void onShutdown() {
+		
+	}
 
 }
