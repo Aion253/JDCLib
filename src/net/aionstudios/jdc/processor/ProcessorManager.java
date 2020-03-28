@@ -1,7 +1,8 @@
 package net.aionstudios.jdc.processor;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Manages {@link Processor}s and {@link ElementProcessor}s for a content processor.
@@ -9,7 +10,7 @@ import java.util.List;
  */
 public class ProcessorManager {
 	
-	private List<ProcessorSet> pss = new ArrayList<ProcessorSet>();
+	private Map<String, ProcessorSet> pss = new HashMap<>();
 	
 	public ProcessorManager() {
 		
@@ -21,20 +22,13 @@ public class ProcessorManager {
 	 * @param e
 	 */
 	public void addProcessorSet(ProcessorSet e) {
-		for(ProcessorSet ep : pss) {
-			if(ep.getName() == e.getName()) {
-				pss.remove(ep);
-				pss.add(e);
-				return;
-			}
-		}
-		pss.add(e);
+		pss.put(e.getName(), e);
 	}
 	
 	/**
 	 * @return The {@link ProcessorSet}s registered to this manager.
 	 */
-	public List<ProcessorSet> getProcessorSets() {
+	public Map<String, ProcessorSet> getProcessorSets() {
 		return pss;
 	}
 
